@@ -54,7 +54,7 @@
     .then(files => {
       const gallery = document.getElementById("gallery");
       files.forEach(file => {
-        if(file.type === "file" && file.name.match(/\.(png|jpg|jpeg|webp)$/) && file.name !== "logo.png"){
+        if(file.type === "file" && file.name.match(/\.(png|jpg|jpeg|webp)$/i) && !file.name.toLowerCase().includes("logo"))
           const img = document.createElement("img");
           img.src = file.download_url;
           img.alt = "Cute character";
